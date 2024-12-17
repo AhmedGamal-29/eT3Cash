@@ -1,0 +1,6 @@
+transaction_type_id,transaction_type
+1,cash_in
+2,cash_out
+3,transfer
+4,donation
+5,investment

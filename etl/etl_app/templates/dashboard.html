@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .card {
+    margin: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.card-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 22px;
+    color: #333;
+}
+
+#chartContainer {
+    width: 100%;
+    height: 400px;
+}
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="my-4">Dashboard</h1>
+
+    <!-- Cards displaying insights -->
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Total Money Spent</h5>
+                    <p id="moneySpent" class="card-text">$0.00</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Total Savings</h5>
+                    <p id="totalSavings" class="card-text">$0.00</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Total Transactions</h5>
+                    <p id="transactionsCount" class="card-text">0</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Used Services</h5>
+                    <p id="usedServices" class="card-text"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chart -->
+    <div id="chartContainer">
+        <canvas id="myChart"></canvas>
+    </div>
+</div>
+
+<script>
+    //Number Format
+    function formatNumber(num) {
+    if (num >= 1e9) {
+        return (num / 1e9).toFixed(1) + 'B';
+    } else if (num >= 1e6) {
+        return (num / 1e6).toFixed(1) + 'M';
+    } else if (num >= 1e3) {
+        return (num / 1e3).toFixed(1) + 'K';
+    }
+    return num.toFixed(2);  // Default formatting
+}
+
+
+    // Fetch data from Django API and display it in cards
+    async function fetchData() {
+    try {
+        // Fetch and handle 'Money Spent'
+        const moneySpent = await fetch('/api/money-spent/').then(response => response.json());
+        console.log('Money Spent:', moneySpent);  // Log the whole object for debugging
+        const totalSpent = parseFloat(moneySpent.total_spent);  // Ensure it’s a number
+        if (!isNaN(totalSpent)) {
+            document.getElementById('moneySpent').innerText = `$${formatNumber(totalSpent)}`;
+        } else {
+            document.getElementById('moneySpent').innerText = '$0.00';  // Fallback if not a valid number
+        }
+
+        // Fetch and handle 'Total Savings'
+        const totalSavings = await fetch('/api/total-savings/').then(response => response.json());
+        console.log('Total Savings:', totalSavings);  // Log for debugging
+        const totalSavingsValue = parseFloat(totalSavings.total_savings);  // Ensure it’s a number
+        if (!isNaN(totalSavingsValue)) {
+            document.getElementById('totalSavings').innerText = `$${formatNumber(totalSavingsValue)}`;
+        } else {
+            document.getElementById('totalSavings').innerText = '$0.00';  // Fallback if not a valid number
+        }
+
+        // Fetch and handle 'Transaction Count'
+        const transactionsCount = await fetch('/api/transactions-count/').then(response => response.json());
+        document.getElementById('transactionsCount').innerText = formatNumber(transactionsCount.transactions_count);
+
+        // Fetch and handle 'Used Services'
+        const usedServices = await fetch('/api/used-services/').then(response => response.json());
+        document.getElementById('usedServices').innerText = usedServices.used_services.map(service => service.transaction_type).join(', ');
+
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        // Handle error gracefully, for example, show default values if the API fails
+        document.getElementById('moneySpent').innerText = '$0.00';
+        document.getElementById('totalSavings').innerText = '$0.00';
+        document.getElementById('transactionsCount').innerText = '0';
+        document.getElementById('usedServices').innerText = 'N/A';
+    }
+}
+
+   // Display a Chart
+async function displayChart() {
+    const usedServicesData = await fetch('/api/used-services/').then(response => response.json());
+    const labels = usedServicesData.used_services.map(service => service.transaction_type);
+
+    // Assign different colors to each service
+    const colors = ['#FF5733', '#33FF57', '#3357FF', '#FF33A6', '#FF8C33', '#57FF33'];
+
+    const data = labels.map(() => Math.random() * 100); // Dummy data for chart
+
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'bar',  // You can change this to 'line', 'pie', etc.
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Service Usage',
+                data: data,
+                backgroundColor: colors.slice(0, labels.length),  // Apply colors to the chart
+                borderColor: colors.slice(0, labels.length),
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+}
+
+
+    // On page load
+    window.onload = async function() {
+        await fetchData();
+        await displayChart();
+    };
+</script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+version: '3.7'
+
+services:
+    app-smart-wallet:
+        build: .
+        command: bash runserver.sh
+        volumes:
+            - ./:/usr/src/app/
+        environment:
+            - DEBUG=True
+            - SECRET_KEY=foo
+            - SQL_ENGINE=django.db.backends.sqlite3  
+            - SQL_DB=db.sqlite3  
+        ports:
+            - "8000:8000"
+        deploy:
+            resources:
+                limits:
+                    memory: 512M  
+
+    front-smart-wallet:
+        build: ../frontend
+        ports:
+            - 8080:80
+        depends_on:
+            - app-smart-wallet
+        deploy:
+            resources:
+                limits:
+                    memory: 512M  
+
