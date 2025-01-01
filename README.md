@@ -16,7 +16,11 @@ eT3Cash is a financial management application designed to streamline transaction
      - **Investments**
      - **Transactions History**
      - **Balance Inquiry**
-   - Screenshots of UI components for these features.
+   ![Screenshot from 2024-12-13 17-41-58](https://github.com/user-attachments/assets/79adbc85-d303-4c98-886b-b5ad1f004301)
+![Screenshot from 2024-12-13 17-40-48](https://github.com/user-attachments/assets/ffabb535-49c0-4f58-9a8b-dbff0f329c3b)
+![Screenshot from 2024-12-13 17-39-56](https://github.com/user-attachments/assets/c739d08f-74c2-40a8-9c55-41c1709db8d5)
+![Screenshot from 2024-12-13 17-38-11](https://github.com/user-attachments/assets/33bef909-da66-4b7f-8582-21a650226a90)
+
 
 2. **Backend (Django)**
    - APIs for handling requests related to:
@@ -30,6 +34,9 @@ eT3Cash is a financial management application designed to streamline transaction
      - Tables for `users`, `wallets`, `transactions`, `investments`, and more.
    - **Data Warehouse Schema**:
      - Designed for analytics with dimensions (e.g., `time`, `user`) and fact tables (e.g., `transaction_facts`).
+     - ![Screenshot from 2024-12-11 17-40-08](https://github.com/user-attachments/assets/f68eb155-f852-49fb-a7b4-70fbca062036)
+![Screenshot from 2024-12-11 17-33-01](https://github.com/user-attachments/assets/923859da-dfde-4167-81fd-32c7acdd7264)
+
 
 4. **ETL Pipeline**
    - Loads mock data from CSV files into the data warehouse.
@@ -43,8 +50,12 @@ eT3Cash is a financial management application designed to streamline transaction
    - Reusable cards for features like:
      - Displaying transaction details
      - Balance summaries
-     - Notifications
-   - Screenshots of mobile interfaces.
+     ![Screenshot from 2024-12-12 16-08-43](https://github.com/user-attachments/assets/69193b79-567d-40c9-80d9-84714fdf6cda)
+![Screenshot from 2024-12-12 16-08-34](https://github.com/user-attachments/assets/9eeadab9-5d08-4534-be3d-65003fd12085)
+![Screenshot from 2024-12-12 16-08-28](https://github.com/user-attachments/assets/38d225be-d6b5-47f7-8626-c4d1895016eb)
+![Screenshot from 2024-12-12 16-04-42](https://github.com/user-attachments/assets/8bfc1fc0-f5b0-4094-b2d2-5f631dd87fb9)
+
+  
 
 ---
 
@@ -102,22 +113,3 @@ eT3Cash is a financial management application designed to streamline transaction
 ├── mobile/         # Flutter mobile application
 └── README.md       # Project documentation
 ```
-
----
-
-## Screenshots
-
-![Screenshot from 2024-12-11 17-40-08](https://github.com/user-attachments/assets/254d8109-480e-491d-82b0-ef6c25abce92)
-![Screenshot from 2024-12-11 17-33-01](https://github.com/user-attachments/assets/7808082d-875d-4053-9c91-b67e9e0db984)
-![Screenshot from 2024-12-12 16-08-34](https://github.com/user-attachments/assets/f1f35b68-96d1-49b0-aee2-93a0130f12fc)
-![Screenshot from 2024-12-12 16-08-28](https://github.com/user-attachments/assets/5ef6dcc1-709b-44b4-855c-bbcc65b9bf4a)
-![Screenshot from 2024-12-12 16-04-42](https://github.com/user-attachments/assets/6f3e8bd9-98c4-418e-9bfd-5fbad83a0e8c)
-![Screenshot from 2024-12-13 17-21-12](https://github.com/user-attachments/assets/18518153-9f17-42fe-9405-46ed50f2396c)
-![Screenshot from 2024-12-12 16-48-25](https://github.com/user-attachments/assets/455d20bd-890f-4bc1-a77c-14421e25a376)
-![Screenshot from 2024-12-12 16-47-39](https://github.com/user-attachments/assets/e3e0c73c-1265-4822-a8a0-5a85cffe8872)
-![Screenshot from 2024-12-13 17-41-58](https://github.com/user-attachments/assets/ba81856c-2541-402d-a76f-8ee2db22c993)
-![Screenshot from 2024-12-13 17-40-48](https://github.com/user-attachments/assets/5e593236-962e-4466-84ae-a0bc095f76d3)
-![Screenshot from 2024-12-13 17-39-56](https://github.com/user-attachments/assets/43115d27-f271-4bf5-950c-dd79d3ed68fa)
-![Screenshot from 2024-12-13 17-38-11](https://github.com/user-attachments/assets/30064077-a3a3-4aa0-86ff-59b775cc9976)
-
-
