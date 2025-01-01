@@ -16,6 +16,7 @@ eT3Cash is a financial management application designed to streamline transaction
      - **Investments**
      - **Transactions History**
      - **Balance Inquiry**
+     - 
    ![Screenshot from 2024-12-13 17-41-58](https://github.com/user-attachments/assets/79adbc85-d303-4c98-886b-b5ad1f004301)
 ![Screenshot from 2024-12-13 17-40-48](https://github.com/user-attachments/assets/ffabb535-49c0-4f58-9a8b-dbff0f329c3b)
 ![Screenshot from 2024-12-13 17-39-56](https://github.com/user-attachments/assets/c739d08f-74c2-40a8-9c55-41c1709db8d5)
@@ -27,13 +28,13 @@ eT3Cash is a financial management application designed to streamline transaction
      - User authentication and wallet management
      - Transactions processing (cash in, cash out, transfer, donations, investments)
      - Balance checks and history
-   - Modular and scalable architecture.
-
+       
 3. **Database**
    - **SQL Schema**:
      - Tables for `users`, `wallets`, `transactions`, `investments`, and more.
    - **Data Warehouse Schema**:
      - Designed for analytics with dimensions (e.g., `time`, `user`) and fact tables (e.g., `transaction_facts`).
+     - 
      - ![Screenshot from 2024-12-11 17-40-08](https://github.com/user-attachments/assets/f68eb155-f852-49fb-a7b4-70fbca062036)
 ![Screenshot from 2024-12-11 17-33-01](https://github.com/user-attachments/assets/923859da-dfde-4167-81fd-32c7acdd7264)
 
