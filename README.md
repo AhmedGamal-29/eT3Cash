@@ -51,6 +51,7 @@ eT3Cash is a financial management application designed to streamline transaction
    - Reusable cards for features like:
      - Displaying transaction details
      - Balance summaries
+     - 
      ![Screenshot from 2024-12-12 16-08-43](https://github.com/user-attachments/assets/69193b79-567d-40c9-80d9-84714fdf6cda)
 ![Screenshot from 2024-12-12 16-08-34](https://github.com/user-attachments/assets/9eeadab9-5d08-4534-be3d-65003fd12085)
 ![Screenshot from 2024-12-12 16-08-28](https://github.com/user-attachments/assets/38d225be-d6b5-47f7-8626-c4d1895016eb)
