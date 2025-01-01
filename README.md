@@ -123,46 +123,13 @@ eT3Cash is a financial management application designed to streamline transaction
 
 ## Screenshots
 
-### Frontend (Vue.js)
-1. **Cash In/Out:**
-   - Description and screenshot.
-2. **Transfer:**
-   - Description and screenshot.
-3. **Donations:**
-   - Description and screenshot.
+![Screenshot from 2024-12-11 17-40-08](https://github.com/user-attachments/assets/254d8109-480e-491d-82b0-ef6c25abce92)
+![Screenshot from 2024-12-11 17-33-01](https://github.com/user-attachments/assets/7808082d-875d-4053-9c91-b67e9e0db984)
+![Screenshot from 2024-12-12 16-08-34](https://github.com/user-attachments/assets/f1f35b68-96d1-49b0-aee2-93a0130f12fc)
+![Screenshot from 2024-12-12 16-08-28](https://github.com/user-attachments/assets/5ef6dcc1-709b-44b4-855c-bbcc65b9bf4a)
+![Screenshot from 2024-12-12 16-04-42](https://github.com/user-attachments/assets/6f3e8bd9-98c4-418e-9bfd-5fbad83a0e8c)
+![Screenshot from 2024-12-13 17-21-12](https://github.com/user-attachments/assets/18518153-9f17-42fe-9405-46ed50f2396c)
+![Screenshot from 2024-12-12 16-48-25](https://github.com/user-attachments/assets/455d20bd-890f-4bc1-a77c-14421e25a376)
+![Screenshot from 2024-12-12 16-47-39](https://github.com/user-attachments/assets/e3e0c73c-1265-4822-a8a0-5a85cffe8872)
 
-### Mobile App (Flutter)
-1. **Dashboard:**
-   - Description and screenshot.
-2. **Transaction History:**
-   - Description and screenshot.
-3. **Investment Overview:**
-   - Description and screenshot.
-
----
-
-## Contribution Guidelines
-
-1. Fork the repository.
-2. Create a feature branch:
-   ```bash
-   git checkout -b feature-name
-   ```
-3. Commit your changes:
-   ```bash
-   git commit -m "Description of changes"
-   ```
-4. Push to your fork and submit a pull request.
-
----
-
-## License
-
-This project is licensed under the MIT License.
-
----
-
-## Contact
-
-For any inquiries or issues, contact us at [email@example.com](mailto:email@example.com).
 
