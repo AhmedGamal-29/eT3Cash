@@ -73,7 +73,7 @@ eT3Cash is a financial management application designed to streamline transaction
    ```bash
    cd eT3Cash/frontend
    npm install
-   npm run serve
+   npm run dev
    ```
 
 3. **Backend Setup:**
@@ -81,22 +81,6 @@ eT3Cash is a financial management application designed to streamline transaction
    cd eT3Cash/backend
    pip install -r requirements.txt
    python manage.py runserver
-   ```
-
-4. **Database Setup:**
-   - Apply migrations:
-     ```bash
-     python manage.py migrate
-     ```
-   - Load mock data into the SQL database:
-     ```bash
-     python manage.py loaddata mock_data.json
-     ```
-
-5. **ETL Pipeline:**
-   ```bash
-   cd eT3Cash/etl
-   python run_etl.py
    ```
 
 6. **Mobile App Setup:**
@@ -113,7 +97,7 @@ eT3Cash is a financial management application designed to streamline transaction
 ```
 ├── frontend/       # Vue.js frontend application
 ├── backend/        # Django backend APIs
-├── database/       # SQL schema and data warehouse schema
+├── SQL/       # SQL schema and data warehouse schema
 ├── etl/            # ETL scripts to load data from CSV files
 ├── mobile/         # Flutter mobile application
 └── README.md       # Project documentation
@@ -131,5 +115,9 @@ eT3Cash is a financial management application designed to streamline transaction
 ![Screenshot from 2024-12-13 17-21-12](https://github.com/user-attachments/assets/18518153-9f17-42fe-9405-46ed50f2396c)
 ![Screenshot from 2024-12-12 16-48-25](https://github.com/user-attachments/assets/455d20bd-890f-4bc1-a77c-14421e25a376)
 ![Screenshot from 2024-12-12 16-47-39](https://github.com/user-attachments/assets/e3e0c73c-1265-4822-a8a0-5a85cffe8872)
+![Screenshot from 2024-12-13 17-41-58](https://github.com/user-attachments/assets/ba81856c-2541-402d-a76f-8ee2db22c993)
+![Screenshot from 2024-12-13 17-40-48](https://github.com/user-attachments/assets/5e593236-962e-4466-84ae-a0bc095f76d3)
+![Screenshot from 2024-12-13 17-39-56](https://github.com/user-attachments/assets/43115d27-f271-4bf5-950c-dd79d3ed68fa)
+![Screenshot from 2024-12-13 17-38-11](https://github.com/user-attachments/assets/30064077-a3a3-4aa0-86ff-59b775cc9976)
 
 
